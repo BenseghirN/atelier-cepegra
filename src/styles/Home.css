@@ -1,0 +1,11 @@
+.ac-stations {
+  border-style: solid;
+  border-color: #bfbfbf;
+  text-align: center;
+  border-width: thin;
+  font-weight: bold;
+}
+
+.ac-station-item {
+  font-weight: bold;
+}
