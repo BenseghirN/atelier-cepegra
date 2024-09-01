@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <style>
+      .grid-container {
+        height: 90%;
+        width: 80%;
+        display: grid;
+        grid-template-areas:
+          "title title title nav1 nav2 nav3"
+          "post-title post-title post-title post-title sidebar sidebar"
+          "post-meta main-content main-content main-content sidebar sidebar"
+          "post-meta main-content main-content main-content ads ads"
+          "post-meta main-image main-image main-image ads ads"
+          "post-meta main-image main-image main-image others others"
+          "post-meta main-image main-image main-image others others"
+          "footer footer footer footer footer footer";
+        gap: 10px;
+        /* background-color: #2196f3; */
+        padding: 10px;
+      }
+
+      .grid-container > div {
+        padding: 20px;
+        font-size: 20px;
+      }
+
+      .title {
+        background-color: #ffd703;
+        grid-area: title;
+      }
+      .nav {
+        background-color: #ffc0cb;
+        grid-area: header;
+      }
+
+      .post-title {
+        background-color: #add8e6;
+        grid-area: post-title;
+      }
+
+      .sidebar {
+        background-color: #ffab3f;
+        grid-area: sidebar;
+      }
+
+      .post-meta {
+        background-color: #90ef90;
+        grid-area: post-meta;
+      }
+
+      .main-content {
+        background-color: #d3d3d3;
+        grid-area: main-content;
+      }
+
+      .main-image {
+        background-color: #ffff0f;
+        grid-area: main-image;
+      }
+
+      .ads {
+        background-color: #13800f;
+        grid-area: ads;
+      }
+
+      .others {
+        background-color: #e140fc;
+        grid-area: others;
+      }
+
+      .footer {
+        background-color: #a1887f;
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="title">Site Title</div>
+      <div class="nav" style="grid-area: nav1">Nav 1</div>
+      <div class="nav" style="grid-area: nav2">Nav 2</div>
+      <div class="nav" style="grid-area: nav3">Nav 3</div>
+      <div class="post-title">Post Title</div>
+      <div class="post-meta">Post Meta</div>
+      <div class="main-content">Main Content</div>
+      <div class="main-image">Main Content Image</div>
+      <div class="sidebar">Side Bar</div>
+      <div class="ads">Ads</div>
+      <div class="others">Other Stuffs</div>
+      <div class="footer">@2024 footer</div>
+    </div>
+  </body>
+</html>
