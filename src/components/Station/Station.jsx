@@ -31,9 +31,16 @@ function Station({ station }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleAccordionChange = () => {
+    if (!isStationInDepartureList(station.id)) {
+      handleOpen();
+    }
+  };
+
   return (
     <>
-      <Accordion>
+      <Accordion onChange={handleAccordionChange}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
@@ -42,12 +49,11 @@ function Station({ station }) {
           <b>{station.name}</b>
         </AccordionSummary>
         <AccordionDetails>
-          {/* {!isStationInDepartureList(station.id) ? (
-            setOpen(true)
-          ) : (
+          {isStationInDepartureList(station.id) ? (
             <StationSummary stationId={station.id} />
-          )} */}
-          <StationSummary stationId={station.id} />
+          ) : (
+            <Typography>Pas de train programmés</Typography>
+          )}
         </AccordionDetails>
       </Accordion>
 
