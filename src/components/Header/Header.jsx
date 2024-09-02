@@ -20,7 +20,7 @@ const StyledSubTitle = styled.p`
 function Header() {
   return (
     <>
-      <div className="ac-header">
+      <header className="ac-header">
         <Link to="/">
           <TrainLogo src={Logo} />
         </Link>
@@ -28,7 +28,7 @@ function Header() {
         <StyledSubTitle>Trains à l'heure?</StyledSubTitle>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/about">About</StyledLink>
-      </div>
+      </header>
     </>
   );
 }

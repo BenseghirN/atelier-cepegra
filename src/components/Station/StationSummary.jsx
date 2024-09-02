@@ -5,26 +5,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-
-import BrusselsNorth from "../../datas/BE.NMBS.008812005.json";
-import LiegeGuillemins from "../../datas/BE.NMBS.008841004.json";
-import Namur from "../../datas/BE.NMBS.008863008.json";
-import CharleroiSud from "../../datas/BE.NMBS.008872009.json";
-import Mons from "../../datas/BE.NMBS.008881000.json";
-import Tournai from "../../datas/BE.NMBS.008885001.json";
-import Mouscron from "../../datas/BE.NMBS.008885704.json";
-import Ghent from "../../datas/BE.NMBS.008892007.json";
-
-const departureList = [
-  BrusselsNorth,
-  LiegeGuillemins,
-  Namur,
-  CharleroiSud,
-  Mons,
-  Mouscron,
-  Tournai,
-  Ghent,
-];
+import { departureList } from "../../datas/DepartureList";
 
 function isStationInDepartureList(stationId) {
   return departureList.find((element) => {

@@ -4,13 +4,10 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import StationSummary from "./StationSummary";
-import BrusselsNorth from "../../datas/BE.NMBS.008812005.json";
-import LiegeGuillemins from "../../datas/BE.NMBS.008841004.json";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-
-const departureList = [BrusselsNorth, LiegeGuillemins];
+import { departureList } from "../../datas/DepartureList";
 
 const style = {
   position: "absolute",
