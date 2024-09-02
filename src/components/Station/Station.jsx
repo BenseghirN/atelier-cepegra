@@ -28,19 +28,22 @@ function isStationInDepartureList(stationId) {
 }
 
 function Station({ station }) {
+  const [expanded, setExpanded] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleAccordionChange = () => {
-    if (!isStationInDepartureList(station.id)) {
-      handleOpen();
+  const handleAccordionChange = (event, isExpanded) => {
+    setExpanded(isExpanded);
+    if (isExpanded && !isStationInDepartureList(station.id)) {
+      setOpen(true);
     }
   };
 
+  const isInDepartureList = isStationInDepartureList(station.id);
+
   return (
     <>
-      <Accordion onChange={handleAccordionChange}>
+      <Accordion expanded={expanded} onChange={handleAccordionChange}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
@@ -49,7 +52,7 @@ function Station({ station }) {
           <b>{station.name}</b>
         </AccordionSummary>
         <AccordionDetails>
-          {isStationInDepartureList(station.id) ? (
+          {isInDepartureList ? (
             <StationSummary stationId={station.id} />
           ) : (
             <Typography>Pas de train programmés</Typography>
