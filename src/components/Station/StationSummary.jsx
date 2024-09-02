@@ -32,6 +32,13 @@ function isStationInDepartureList(stationId) {
   });
 }
 
+function formatToLocalTime(unixTimeStamp) {
+  const date = new Date(unixTimeStamp * 1000);
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  return hour + ":" + minute;
+}
+
 function StationSummary(props) {
   const departures = departureList.find(
     (d) => d.stationinfo.id === props.stationId
@@ -67,7 +74,7 @@ function StationSummary(props) {
                   <TableCell component="th" scope="row">
                     {dep.station}
                   </TableCell>
-                  <TableCell>{dep.time}</TableCell>
+                  <TableCell>{formatToLocalTime(dep.time)}</TableCell>
                   <TableCell>{dep.platform}</TableCell>
                   <TableCell>{dep.delay} min.</TableCell>
                 </TableRow>
