@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import stations from "../datas/stations.json";
-import { ListItem, ListItemText } from "@mui/material";
 import "../styles/Home.css";
+import Station from "../components/Station/Station";
 
 const ListStations = styled.div`
   margin: 30px;
@@ -13,10 +13,8 @@ function Home() {
   return (
     <>
       <ListStations>
-        {stations.station.map(({ id, name, standardname }) => (
-          <ListItem className="ac-stations" key={id} disableGutters>
-            <ListItemText className="ac-station-item" primary={name} />
-          </ListItem>
+        {stations.station.map((station) => (
+          <Station station={station} key={station.id} />
         ))}
       </ListStations>
     </>
