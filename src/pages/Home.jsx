@@ -9,11 +9,14 @@ const ListStations = styled.div`
   justify-content: center;
 `;
 
+const stationList = [...stations.station];
+stationList.sort((a, b) => a.name.localeCompare(b.name));
+
 function Home() {
   return (
     <>
       <ListStations>
-        {stations.station.map((station) => (
+        {stationList.map((station) => (
           <Station station={station} key={station.id} />
         ))}
       </ListStations>
